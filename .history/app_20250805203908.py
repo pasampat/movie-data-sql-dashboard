@@ -80,10 +80,11 @@ st.markdown(
 if not movies_df.empty:
     display_df = movies_df.rename(columns={
         "title": "Title",
+        "release_year": "Year",
         "vote_average": "Average Rating",
         "vote_count": "Votes",
         "genres": "Genres"
-    })[["Title", "Average Rating", "Votes", "Genres"]]
+    })[["Title", "Year", "Average Rating", "Votes", "Genres"]]
 
     # Display table with index starting at 1
     display_df.index = range(1, len(display_df) + 1)
@@ -91,11 +92,21 @@ if not movies_df.empty:
 else:
     st.warning("No movies available to display with the current filters.")
 
+# ------------------ KPI CARDS ------------------
+st.markdown("🎯 Key Insights")
+st.markdown("Summary of the movies currently visible in the table above:")
 
-st.divider()
+if not movies_df.empty:
+    col1, col2, col3 = st.columns(3)
+    col1.metric("🎬 Movies Displayed", len(movies_df))
+    col2.metric("⭐ Average Rating", round(movies_df["vote_average"].mean(), 2))
+    top_genre = movies_df["genres"].mode()[0] if not movies_df.empty else "N/A"
+    col3.metric("🎭 Most Common Genre", top_genre)
+else:
+    st.info("No movies match your filters to calculate insights.")
 
 # ------------------ AVERAGE RATING PER YEAR ------------------
-st.markdown("#### 📈 Average Rating Per Year")
+st.subheader("📈 Average Rating Per Year")
 st.markdown("Shows how the average rating of movies that meet your filters changes over time.")
 
 rating_trend_query = f"""
@@ -112,10 +123,9 @@ if not rating_df.empty:
     st.line_chart(rating_df.set_index("release_year"))
 else:
     st.info("Not enough data for the selected filters to plot ratings by year.")
-st.divider()
 
 # ------------------ GENRE DISTRIBUTION PIE CHART ------------------
-st.markdown("#### 🥧 Top 10 Genre Combinations by Movie Count")
+st.subheader("🥧 Top 10 Genre Combinations by Movie Count")
 st.markdown("Shows the most common genre combinations among the filtered movies.")
 
 genre_count_query = f"""
@@ -141,7 +151,7 @@ if not genre_count_df.empty:
     # Show only percentages on slices
     fig.update_traces(textposition='inside', textinfo='percent')
     # Make pie chart smaller
-    fig.update_layout(height=380, width=500)
+    fig.update_layout(height=350, width=500)
     st.plotly_chart(fig, use_container_width=False)
 else:
     st.info("No genre data available for the selected filters.")

@@ -112,7 +112,6 @@ if not rating_df.empty:
     st.line_chart(rating_df.set_index("release_year"))
 else:
     st.info("Not enough data for the selected filters to plot ratings by year.")
-st.divider()
 
 # ------------------ GENRE DISTRIBUTION PIE CHART ------------------
 st.markdown("#### 🥧 Top 10 Genre Combinations by Movie Count")
