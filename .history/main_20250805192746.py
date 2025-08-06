@@ -19,8 +19,7 @@ def main():
     df_high_rated = high_rated_popular_movies(min_rating=8.0, min_votes=1000)
     print(tabulate(df_high_rated, headers="keys", tablefmt="pretty"))
 
-
-    print("\n=== Movies Per Genre ===")
+        print("\n=== Movies Per Genre ===")
     print(tabulate(movies_per_genre(), headers="keys", tablefmt="pretty"))
 
     print("\n=== Top Action Movies by Rating ===")

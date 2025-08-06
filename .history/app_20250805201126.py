@@ -14,14 +14,10 @@ import plotly.express as px
 
 st.set_page_config(page_title="🎬 Movie SQL Dashboard", layout="wide")
 
-# ---- PAGE HEADER ----
+# ---- Title ----
 st.title("🎬 Movie Data SQL Dashboard")
-st.markdown("**Explore movies by rating, popularity, and genre using a SQLite backend.**")
+st.write("Explore movies by rating, popularity, and genre using a SQLite backend.")
 
-# Show total movies in dataset
-total_movies_df = run_query("SELECT COUNT(*) as total FROM movies")
-total_movies = total_movies_df["total"].iloc[0]
-st.markdown(f"### 📊 Dataset contains **{total_movies:,} movies**")
 
 # ---- Sidebar Filters ----
 st.sidebar.header("Filters")
@@ -72,7 +68,7 @@ def get_filtered_movies(genre: str, min_rating: float, min_votes: int, limit: in
 # ---- Fetch Filtered Movies ----
 movies_df = get_filtered_movies(selected_genre, min_rating, min_votes)
 
-# ---- KPI CARDS ----
+# ---- KPI Cards ----
 st.subheader("🎯 Key Insights")
 if not movies_df.empty:
     col1, col2, col3 = st.columns(3)
@@ -86,7 +82,7 @@ else:
 
 # ---- Filtered Movies Table ----
 st.subheader("🎥 Filtered Movies — Top 50 by Rating")
-st.markdown("**Shows movies that meet your selected filters: genre, minimum rating, and minimum votes.**")
+st.caption("Shows movies that meet your selected filters: genre, minimum rating, and minimum votes.")
 
 if not movies_df.empty:
     # Rename for display clarity
@@ -105,7 +101,7 @@ else:
 
 # ---- Average Rating Per Year ----
 st.subheader("📈 Average Rating Per Year")
-st.markdown("**Shows how the average rating of movies matching your filters changes over time.**")
+st.caption("See how the average rating of movies matching your filters changes over time.")
 
 rating_trend_query = f"""
 SELECT release_year, ROUND(AVG(vote_average), 2) AS avg_rating
@@ -125,7 +121,7 @@ else:
 
 # ---- Genre Distribution Pie Chart ----
 st.subheader("🥧 Top 10 Genre Combinations by Movie Count")
-st.markdown("**Shows the top 10 most common genre combinations among the filtered movies.**")
+st.caption("Shows the most common genre combinations among the filtered movies.")
 
 genre_count_query = f"""
 SELECT genres, COUNT(*) AS movie_count

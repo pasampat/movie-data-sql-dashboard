@@ -20,13 +20,5 @@ def main():
     print(tabulate(df_high_rated, headers="keys", tablefmt="pretty"))
 
 
-    print("\n=== Movies Per Genre ===")
-    print(tabulate(movies_per_genre(), headers="keys", tablefmt="pretty"))
-
-    print("\n=== Top Action Movies by Rating ===")
-    print(tabulate(top_movies_by_genre("Action"), headers="keys", tablefmt="pretty"))
-
-
-
 if __name__ == "__main__":
     main()
