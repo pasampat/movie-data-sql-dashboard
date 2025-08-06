@@ -7,7 +7,8 @@ from tabulate import tabulate
 def main():
     # 1. Run ETL 
     print("\n=== Running ETL ===")
-    load_csv_to_sqlite("data/movies.csv")
+    load_csv_to_sqlite("data/movies.csv", archive=False)
+
 
     # 2. Print Top 10 Movies by Rating
     print("\n=== Top 10 Movies by Rating ===")
