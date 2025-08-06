@@ -1,13 +1,24 @@
 # Virtual environment
 venv/
 
+# Virtual environment & Python cache
+.venv/
+__pycache__/
+*.pyc
+
 # SQLite database
 *.db
+
+
+.history/
+.DS_Store
+Thumbs.db
 
 # Local data & archives
 data/
 archive/
 outputs/
+data.db
 
 # Streamlit cache
 .streamlit/
