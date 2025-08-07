@@ -3,7 +3,7 @@
 *From raw CSVs to clean dashboards — an end-to-end ETL pipeline with live visual insights.*
 ---
 
-## 🎯 **Try it live:** [Movie Data SQL Dashboard](https://j7ncofvcdyyuu6ggmftsapp.streamlit.app/)
+### 🎯 **Try it live:** [Movie Data SQL Dashboard](https://j7ncofvcdyyuu6ggmftsapp.streamlit.app/)
 <p align="left">
   <img src="images/pic1.png" alt="Resume Keyword Matcher Demo" width="700"/>
 </p>
@@ -19,7 +19,7 @@
 </p>
 ---
 
-## 📊 What This Project Does
+### 📊 What This Project Does
 
 This project lets you explore a movie dataset using *live filters* and dynamic visualizations. It combines a full *ETL pipeline* (cleaning and loading the data into SQL) with an *interactive dashboard* to help you answer questions like:
 
@@ -29,7 +29,7 @@ This project lets you explore a movie dataset using *live filters* and dynamic v
 
 ---
 
-## 🧭 How It Works
+### 🧭 How It Works
 
 1. **Filter the Dataset (Left Panel):**  
    Start by choosing:
@@ -45,9 +45,9 @@ This project lets you explore a movie dataset using *live filters* and dynamic v
    - 🥧 A *pie chart* shows the *most common genre combinations*
 
 ---
-## ⚙️ Features Overview
+### ⚙️ Features Overview
 
-### 🔄 End-to-End ETL Pipeline
+#### 🔄 End-to-End ETL Pipeline
 
 - **Loads raw CSV files** from the `data/` folder and reads them into pandas for processing  
   *Simulates receiving raw files in a real-world data pipeline*
@@ -68,7 +68,7 @@ This project lets you explore a movie dataset using *live filters* and dynamic v
 - **Fully automated pipeline:** The entire ETL process can be triggered with a single function (`load_csv_to_sqlite()`), making it *modular, repeatable, and scalable*.
 
 
-### 🧠 SQL Analysis Features
+#### 🧠 SQL Analysis Features
 
 - Filters movies based on **minimum rating**, **minimum vote count**, and **selected genre**
 - Returns **top-rated movies** that meet filtering criteria
@@ -77,7 +77,7 @@ This project lets you explore a movie dataset using *live filters* and dynamic v
 - All queries return results as **pandas DataFrames** for easy dashboard integration
 
 
-## 📂 Project Structure
+### 📂 Project Structure
 ```
 ├── app.py     # Streamlit app that powers the interactive dashboard
 ├── main.py    # Runs the full ETL pipeline from CSV → SQLite
@@ -92,47 +92,47 @@ This project lets you explore a movie dataset using *live filters* and dynamic v
 ├── data/ # Folder containing raw CSVs for ETL input
 ```
 
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
-### ⚙️ Core Languages & Libraries
+#### ⚙️ Core Languages & Libraries
 - **Python** — Main language for ETL, SQL, and the Streamlit app  
 - **SQLite** — Lightweight SQL database to store the cleaned movie data  
 - **Pandas** — For loading CSVs, cleaning data, and manipulating query results  
 - **Plotly** — For interactive visualizations (line chart + pie chart in Streamlit)  
 - **Streamlit** — For building the web dashboard (UI + visual output)
 
-### 🛠️ ETL Tools
+#### 🛠️ ETL Tools
 - **ast** — Parses stringified JSON fields (used to extract genres from TMDB-style data)  
 - **shutil** — Moves archived CSV files to a separate `/archive` folder after processing  
 - **pathlib** — Cross-platform file path handling for clean, readable code
 
-### 🗄️ SQL Tools
+#### 🗄️ SQL Tools
 - **sqlite3** — Python’s built-in library for running SQL queries on the `.db` file  
 - **tabulate** — Used during CLI testing to format SQL query results into clean tables
 
 ---
-## ⚡ Installation / Local Setup Instructions
+### ⚡ Installation / Local Setup Instructions
 
-### 1️⃣ Clone the Repository
+#### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/pasampat/movie-data-sql-dashboard.git
 cd movie-data-sql-dashboard
 ```
 
-### 🔹 2. Create a virtual environment
+#### 🔹 2. Create a virtual environment
 ```python -m venv .venv
 source .venv/bin/activate    # macOS/Linux
 .venv\Scripts\activate       # Windows
 ```
 
-### 🔹 3. Install dependencies
+#### 🔹 3. Install dependencies
 Make sure you have Python 3.10+
 ```
 pip install -r requirements.txt
 ```
 
-### 🔹 4. Run the App
+#### 🔹 4. Run the App
 ```
 python main.py
 streamlit run app.py
