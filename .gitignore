@@ -14,10 +14,10 @@ __pycache__/
 Thumbs.db
 
 # Ignore everything in data/
-data/*
+#data/*
 
 # EXCEPT movies.db
-!data/movies.db
+#!data/movies.db
 
 
 # Local data & archives
