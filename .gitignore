@@ -24,7 +24,7 @@ Thumbs.db
 
 archive/
 outputs/
-data.db
+
 
 # Streamlit cache
 .streamlit/
