@@ -4,6 +4,10 @@ from sql_utils import top_10_movies, high_rated_popular_movies, movies_per_genre
 from tabulate import tabulate
 
 
+#cd C:\TestEnv
+#testenv\Scripts\activate
+#cd C:\UGASchool\Summer\movie-data-sql-dashboard
+
 def main():
     # 1. Run ETL 
     print("\n=== Running ETL ===")
