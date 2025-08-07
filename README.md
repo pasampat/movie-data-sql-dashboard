@@ -5,13 +5,14 @@
 
 ## 🎯 **Try it live:** [Movie Data SQL Dashboard](https://j7ncofvcdyyuu6ggmftsapp.streamlit.app/)
 <p align="left">
-  <img src="images/pic1.png" alt="Resume Keyword Matcher Demo" width="600"/>
+  <img src="images/pic1.png" alt="Resume Keyword Matcher Demo" width="700"/>
+</p>
+<br>
+<p align="left">
+  <img src="images/pic2.png" alt="Resume Keyword Matcher Demo" width="700"/>
 </p>
 <p align="left">
-  <img src="images/pic2.png" alt="Resume Keyword Matcher Demo" width="600"/>
-</p>
-<p align="left">
-  <img src="images/pic3.png" alt="Resume Keyword Matcher Demo" width="600"/>
+  <img src="images/pic3.png" alt="Resume Keyword Matcher Demo" width="700"/>
 </p>
 <p align="left">
   <img src="images/pic4.png" alt="Resume Keyword Matcher Demo" width="600"/>
