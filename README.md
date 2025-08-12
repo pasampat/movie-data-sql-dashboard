@@ -3,7 +3,7 @@
 *From raw CSVs to clean dashboards — an end-to-end ETL pipeline with live visual insights.*
 ---
 
-## 🎯 **Try it live:** [Movie Data SQL Dashboard](https://j7ncofvcdyyuu6ggmftsapp.streamlit.app/)
+# 🎯 **Try it live:** [Movie Data SQL Dashboard](https://j7ncofvcdyyuu6ggmftsapp.streamlit.app/)
 <p align="left">
   <img src="images/pic1.png" alt="Resume Keyword Matcher Demo" width="700"/>
 </p>
